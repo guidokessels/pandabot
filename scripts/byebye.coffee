@@ -12,22 +12,22 @@
 #   Bye
 #   Byebye
 #   Bye bye
-#   See you|u tomorrow|2morrow|later|next week
+#   See you|ya|u
 byebye = [
-    "Bye, %",
-    "Have a nice day, %",
-    "Ciao! %",
-    "See you, %",
-    "% has left the building",
+    "Bye, %!",
+    "Have a nice day, %.",
+    "Ciao, %!",
+    "See you, %.",
+    "% has left the building!",
     "Noooo, don't leave me, %!",
     "Bye bye!",
-    "Goodbye, %"
+    "Goodbye, %."
 ]
 module.exports = (robot) ->
-    robot.hear /^(good)?(bye( )?(bye)?)/i, (msg) ->
+    robot.hear /(^(good)?( )?bye( )?(bye)?( )?(.*)?)/i, (msg) ->
         bye = msg.random byebye
         msg.send bye.replace "%", msg.message.user.name
 
-    robot.hear /(^see (you|u)( )?(tomorrow|2morrow|later|next week)?)/i, (msg) ->
+    robot.hear /(^see (you|ya|u)( .*)?)/i, (msg) ->
         bye = msg.random byebye
         msg.send bye.replace "%", msg.message.user.name
