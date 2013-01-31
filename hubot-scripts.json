@@ -1,1 +1,16 @@
-["redis-brain.coffee", "tweet.coffee", "shipit.coffee"]
+[
+    // Default scripts that came with Hubot
+    "redis-brain.coffee",
+    "tweet.coffee",
+    "shipit.coffee",
+
+    // Added manually
+    "achievement_unlocked.coffee",      // Achievement unlocked!
+    "ackbar.coffee",                    // It's a trap!
+    "applause.coffee",                  // Slow clap
+    "github-status.coffee",             // Get GitHub status info (eg, downtime/server down)
+    "hello.coffee",                     // Turns Hubot into a well-mannered, friendly bot
+    "isup.coffee",                      // Use Hubot to check if a site is down
+    "facepalm.coffee",                  //  Clearly illustrate with an image what people mean whenever they say "facepalm"
+
+]
