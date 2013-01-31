@@ -3,12 +3,11 @@
     "tweet.coffee",
     "shipit.coffee",
 
-    
+    "hello.coffee",
     "achievement_unlocked.coffee",    
     "ackbar.coffee",                  
     "applause.coffee",                
     "github-status.coffee",           
-    "hello.coffee",                   
     "facepalm.coffee"                 
 
 ]
