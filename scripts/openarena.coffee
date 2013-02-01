@@ -8,8 +8,8 @@
 #   None
 #
 # Commands:
-#   show Open Arena stats
-#   show Open Arena toplist
+#   hubot show Open Arena stats
+#   hubot show Open Arena toplist
 
 oa_server_ip = '46.21.162.135:1200'
 
