@@ -44,20 +44,32 @@ module.exports = (robot) ->
         grab_top_players msg, (names) ->
             msg.send "The top 10 players are:\n    " + names.join('\n    ')
 
-    robot.hear /who('?s| is)( currently| now)? playing (OA|Open Arena|Arena|Quake)/i, (msg) ->
+    robot.respond /how many( people|players?)( are)? (online|playing)( in)? (OA|Open Arena|Arena|Quake)/i, (msg) ->
+      grab_current_player_list msg, (result) ->
+            count = result.length
+            playerstext = 'person is'
+
+            if count > 1
+              playerstext = 'people are'
+
+            if count < 1
+              msg.send "No-one is currently online..."
+            else
+              msg.send count + " " + playerstext + " currently playing Open Arena"
+
+    robot.respond /who('?s| is)( currently| now)? playing (OA|Open Arena|Arena|Quake)/i, (msg) ->
         grab_current_player_list msg, (result) ->
             count = result.length
             playernames = []
+            playerstext = 'person is'
 
             result.forEach (player) ->
               playernames.push player.name
 
             if count > 1
-              players = 'people are'
-            else 
-              players = 'person is'
+              playerstext = 'people are'
 
             if count < 1
               msg.send "No-one is currently playing :-("
             else
-              msg.send count + " " + players + " currently playing:\n    " + playernames.join("\n    ")
+              msg.send count + " " + playerstext + " currently playing:\n    " + playernames.join("\n    ")
