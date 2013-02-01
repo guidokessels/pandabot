@@ -47,7 +47,17 @@ module.exports = (robot) ->
     robot.hear /who('?s| is)( currently| now)? playing (OA|Open Arena|Arena|Quake)/i, (msg) ->
         grab_current_player_list msg, (result) ->
             count = result.length
+            playernames = []
+
+            result.forEach (player) ->
+              playernames.push player.name
+
+            if count > 1
+              players = 'people are'
+            else 
+              players = 'person is'
+
             if count < 1
               msg.send "No-one is currently playing :-("
             else
-              msg.send count + " people are currently playing:\n    " + result.join("\n    ")
+              msg.send count + " " + players + " currently playing:\n    " + playernames.join("\n    ")
