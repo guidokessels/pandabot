@@ -24,7 +24,7 @@ grab_top_players = (msg, cb) ->
       matches = body.match top_players_regexp 
       matches.forEach (line) ->
         name = line.replace top_players_regexp, '$1' 
-        names.push '#' + count + '. ' + name
+        names.push count + '. ' + name
         count = count + 1
       cb(names)
 
@@ -34,4 +34,4 @@ module.exports = (robot) ->
 
     robot.respond /show (OA|Open Arena|Arena|Quake) (ladder|top|highscore|score)? ?list/i, (msg) ->
         grab_top_players msg, (names) ->
-            msg.send "The top 10 players are:\n  " + names.join('\n  ')
+            msg.send "The top 10 players are:\n    " + names.join('\n    ')
