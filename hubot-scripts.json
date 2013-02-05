@@ -8,6 +8,7 @@
     "ackbar.coffee",                  
     "applause.coffee",                
     "github-status.coffee",           
-    "facepalm.coffee"                 
+    "facepalm.coffee",
+    "jira-issues.coffee"                 
 
 ]
