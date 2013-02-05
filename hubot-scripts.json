@@ -9,6 +9,6 @@
     "applause.coffee",                
     "github-status.coffee",           
     "facepalm.coffee",
-    "jira-issues.coffee"                 
+    "jira-issues-custom.coffee"                 
 
 ]
