@@ -3,12 +3,10 @@
     "tweet.coffee",
     "shipit.coffee",
 
-    "hello.coffee",
     "achievement_unlocked.coffee",    
     "ackbar.coffee",                  
     "applause.coffee",                
     "github-status.coffee",           
-    "facepalm.coffee",
-    "jira-issues-custom.coffee"
+    "facepalm.coffee"
 
 ]
